@@ -276,9 +276,183 @@ hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不
       </tags>
   </entry>
   <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/manifest.json</url>
     <content><![CDATA[{"name":"SilF`Blog","short_name":"SilF","theme_color":"#3b70fc","background_color":"#3b70fc","display":"standalone","scope":"/","start_url":"/","icons":[{"src":"/img/siteicon/16.png","sizes":"16x16","type":"image/png"},{"src":"/img/siteicon/32.png","sizes":"32x32","type":"image/png"},{"src":"/img/siteicon/48.png","sizes":"48x48","type":"image/png"},{"src":"/img/siteicon/64.png","sizes":"64x64","type":"image/png"},{"src":"/img/siteicon/128.png","sizes":"128x128","type":"image/png"},{"src":"/img/siteicon/144.png","sizes":"144x144","type":"image/png"},{"src":"/img/siteicon/512.png","sizes":"512x512","type":"image/png"}],"splash_pages":null}]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>音乐馆</title>
+    <url>/music/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>link</title>
+    <url>/link/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/css/myStyle.css</url>
+    <content><![CDATA[#web_bg {
+    background-image: url("../img/banner.jpg"),
+        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
+}
+#post_bg {
+    background-image: url("../img/banner.jpg"),
+        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
+}
+/* 侧边栏个人信息卡片动态渐变色 */
+#aside-content>.card-widget.card-info{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(8, 37, 95, 0.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.card-widget.card-info {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 侧边栏公告栏卡片渐变色 */
+#aside-content>.card-widget.card-announcement{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.card-widget.card-announcement{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 侧边栏目录最新文章卡片渐变色 */
+#aside-content>.sticky_layout>.card-widget{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.sticky_layout>.card-widget{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 个人信息Follow me按钮 */
+#aside-content>.card-widget.card-info>#card-info-btn {
+    background-color: #3eb8be;
+    border-radius: 8px;
+}
+/*文章页面*/
+.layout>#post {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#post {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/*主页文章预览页面*/
+#recent-posts>.recent-post-item{
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] #recent-posts>.recent-post-item{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+
+/*分类页面*/
+.layout>#page {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#page {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+
+/*时间轴页面*/
+.layout>#archive {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#archive {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/runtime.js</url>
+    <content><![CDATA[setInterval(() => {
+  let create_time = Math.round(new Date('2025-05-24 18:30:00').getTime() / 1000); //在此行修改建站时间
+  let timestamp = Math.round((new Date().getTime()) / 1000);
+  let second = timestamp - create_time;
+  let time = new Array(0, 0, 0, 0, 0);
+
+  var nol = function(h){
+    return h>9?h:'0'+h;
+  }
+  if (second >= 365 * 24 * 3600) {
+    time[0] = parseInt(second / (365 * 24 * 3600));
+    second %= 365 * 24 * 3600;
+  }
+  if (second >= 24 * 3600) {
+    time[1] = parseInt(second / (24 * 3600));
+    second %= 24 * 3600;
+  }
+  if (second >= 3600) {
+    time[2] = nol(parseInt(second / 3600));
+    second %= 3600;
+  }
+  if (second >= 60) {
+    time[3] = nol(parseInt(second / 60));
+    second %= 60;
+  }
+  if (second > 0) {
+    time[4] = nol(second);
+  }
+  if ((Number(time[2])7)){
+    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
+  }
+  else{
+    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
+  }
+  document.getElementById("workboard").innerHTML = currentTimeHtml;
+}, 1000);]]></content>
   </entry>
   <entry>
     <title></title>
@@ -655,174 +829,6 @@ div#category {
 }]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/css/myStyle.css</url>
-    <content><![CDATA[#web_bg {
-    background-image: url("../img/banner.jpg"),
-        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
-}
-#post_bg {
-    background-image: url("../img/banner.jpg"),
-        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
-}
-/* 侧边栏个人信息卡片动态渐变色 */
-#aside-content>.card-widget.card-info{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(8, 37, 95, 0.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.card-widget.card-info {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 侧边栏公告栏卡片渐变色 */
-#aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 侧边栏目录最新文章卡片渐变色 */
-#aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 个人信息Follow me按钮 */
-#aside-content>.card-widget.card-info>#card-info-btn {
-    background-color: #3eb8be;
-    border-radius: 8px;
-}
-/*文章页面*/
-.layout>#post {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#post {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/*主页文章预览页面*/
-#recent-posts>.recent-post-item{
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] #recent-posts>.recent-post-item{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-
-/*分类页面*/
-.layout>#page {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#page {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-
-/*时间轴页面*/
-.layout>#archive {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#archive {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/runtime.js</url>
-    <content><![CDATA[setInterval(() => {
-  let create_time = Math.round(new Date('2025-05-24 18:30:00').getTime() / 1000); //在此行修改建站时间
-  let timestamp = Math.round((new Date().getTime()) / 1000);
-  let second = timestamp - create_time;
-  let time = new Array(0, 0, 0, 0, 0);
-
-  var nol = function(h){
-    return h>9?h:'0'+h;
-  }
-  if (second >= 365 * 24 * 3600) {
-    time[0] = parseInt(second / (365 * 24 * 3600));
-    second %= 365 * 24 * 3600;
-  }
-  if (second >= 24 * 3600) {
-    time[1] = parseInt(second / (24 * 3600));
-    second %= 24 * 3600;
-  }
-  if (second >= 3600) {
-    time[2] = nol(parseInt(second / 3600));
-    second %= 3600;
-  }
-  if (second >= 60) {
-    time[3] = nol(parseInt(second / 60));
-    second %= 60;
-  }
-  if (second > 0) {
-    time[4] = nol(second);
-  }
-  if ((Number(time[2])7)){
-    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
-  }
-  else{
-    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
-  }
-  document.getElementById("workboard").innerHTML = currentTimeHtml;
-}, 1000);]]></content>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>link</title>
-    <url>/link/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/js/star-canvas.js</url>
     <content><![CDATA[/**
@@ -918,12 +924,6 @@ const startCanvas = () => {
 };
 // 启动
 startCanvas();]]></content>
-  </entry>
-  <entry>
-    <title>音乐馆</title>
-    <url>/music/index.html</url>
-    <content><![CDATA[
-]]></content>
   </entry>
   <entry>
     <title>标签</title>
