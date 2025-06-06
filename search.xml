@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>123</title>
-    <url>/posts/884863d2/</url>
-    <content><![CDATA[
+    <title>踩坑小记</title>
+    <url>/posts/b7b29213/</url>
+    <content><![CDATA[本来心血来潮想自己搭建一个网站发发数学笔记的Blog，于是按照B站教程用wordpress创建了自己的一个小站，但是缺点太多了，比如说由于我未成年，所以不能给域名备案，另一方面经常突然崩掉(当然这是因为我太菜了)，心态跟着网站也崩掉了~
+于是我开始转向现在的Hexo，终于一通捣鼓后发现：markdown语法和LaTex语法冲突太多了，我开始按照一些教程去装一些东西，试了好多种，最后误打误撞也是搞出来了(笑)，最后决定用
+hexo-filter-mathjax+
+hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不管了先这样吧。
+顺带一提，这个帖子也用于记录一些遇到的技术上的问题。毕竟有句古话说得好：
+
+坑是踩不完的。
+
 ]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
   </entry>
   <entry>
     <title>拾遗——局部染色</title>
@@ -28,19 +38,75 @@ Erdős的局部染色问题
       </tags>
   </entry>
   <entry>
-    <title>踩坑小记</title>
-    <url>/posts/b7b29213/</url>
-    <content><![CDATA[本来心血来潮想自己搭建一个网站发发数学笔记的Blog，于是按照B站教程用wordpress创建了自己的一个小站，但是缺点太多了，比如说由于我未成年，所以不能给域名备案，另一方面经常突然崩掉(当然这是因为我太菜了)，心态跟着网站也崩掉了~
-于是我开始转向现在的Hexo，终于一通捣鼓后发现：markdown语法和LaTex语法冲突太多了，我开始按照一些教程去装一些东西，试了好多种，最后误打误撞也是搞出来了(笑)，最后决定用
-hexo-filter-mathjax+
-hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不管了先这样吧。
-顺带一提，这个帖子也用于记录一些遇到的技术上的问题。毕竟有句古话说得好：
+    <title>正密度集合里的单位分数(2)</title>
+    <url>/posts/80fb2c14/</url>
+    <content><![CDATA[本文将会使用分析证明下面的命题2，它用于侦测是否使得存在子集满足.
 
-坑是踩不完的。
 
+
+
+
+
+
+记号
+含义
+
+
+
+
+
+
+
+
+
+表示渐进下界符号
+
+
+
+中全体元素的最小公倍数
+
+
+
+
+
+
+
+
+
+
+，(为区间)
+
+
+
+
+命题2 存在绝对常数，满足：若，整数，参数，且满足：
+(1);
+(2);
+(3);
+(4)任意长为的闭区间满足以下两个条件之一： -
+(a)存在至少个使得中无的倍数; - (b).
+则，且这样的至少有个.
+命题2证明 记，为全体素数幂的集合，为满足的集合的个数，注意,故恰有个集合满足.
+通分知形如，故
+其中贡献，(如果有这项)贡献.
+记.按照原文的说法，我们将划分为优弧()与劣弧()分别估计：其中优弧定义为，注意，所以两两不交，劣弧为.
+先来看优弧的贡献：对固定的与，记，其中且，利用故优弧总贡献为
+
+其中每个 
+，暂记 ，则 ，故优弧总贡献非负.
+然后是劣弧的贡献的估计：
+注意 ，，又，取充分小保证我们将证明  以此说明的贡献，进而，便完成了命题2的证明.
+令，为使得满足4(a)的的集合，.
+对，记且，则.对，所以.(最后一步来自).
+最后是：注意对，有至多个使得，故，简记，，由定义有：，故，其中，进而(最后一个不等号依赖充分小).由定义知，由4(b)知
+结合上面的结论：(依赖c充分小). 
 ]]></content>
+      <categories>
+        <category>数论</category>
+      </categories>
       <tags>
-        <tag>生活</tag>
+        <tag>数论估计</tag>
+        <tag>Fourier分析</tag>
       </tags>
   </entry>
   <entry>
@@ -204,78 +270,6 @@ hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不
       </tags>
   </entry>
   <entry>
-    <title>正密度集合里的单位分数(2)</title>
-    <url>/posts/80fb2c14/</url>
-    <content><![CDATA[本文将会使用分析证明下面的命题2，它用于侦测是否使得存在子集满足.
-
-
-
-
-
-
-
-记号
-含义
-
-
-
-
-
-
-
-
-
-表示渐进下界符号
-
-
-
-中全体元素的最小公倍数
-
-
-
-
-
-
-
-
-
-
-，(为区间)
-
-
-
-
-命题2 存在绝对常数，满足：若，整数，参数，且满足：
-(1);
-(2);
-(3);
-(4)任意长为的闭区间满足以下两个条件之一： -
-(a)存在至少个使得中无的倍数; - (b).
-则，且这样的至少有个.
-命题2证明 记，为全体素数幂的集合，为满足的集合的个数，注意,故恰有个集合满足.
-通分知形如，故
-其中贡献，(如果有这项)贡献.
-记.按照原文的说法，我们将划分为优弧()与劣弧()分别估计：其中优弧定义为，注意，所以两两不交，劣弧为.
-先来看优弧的贡献：对固定的与，记，其中且，利用故优弧总贡献为
-
-其中每个 
-，暂记 ，则 ，故优弧总贡献非负.
-然后是劣弧的贡献的估计：
-注意 ，，又，取充分小保证我们将证明  以此说明的贡献，进而，便完成了命题2的证明.
-令，为使得满足4(a)的的集合，.
-对，记且，则.对，所以.(最后一步来自).
-最后是：注意对，有至多个使得，故，简记，，由定义有：，故，其中，进而(最后一个不等号依赖充分小).由定义知，由4(b)知
-结合上面的结论：(依赖c充分小). 
-]]></content>
-      <categories>
-        <category>数论</category>
-      </categories>
-      <tags>
-        <tag>数论估计</tag>
-        <tag>Fourier分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/manifest.json</url>
     <content><![CDATA[{"name":"SilF`Blog","short_name":"SilF","theme_color":"#3b70fc","background_color":"#3b70fc","display":"standalone","scope":"/","start_url":"/","icons":[{"src":"/img/siteicon/16.png","sizes":"16x16","type":"image/png"},{"src":"/img/siteicon/32.png","sizes":"32x32","type":"image/png"},{"src":"/img/siteicon/48.png","sizes":"48x48","type":"image/png"},{"src":"/img/siteicon/64.png","sizes":"64x64","type":"image/png"},{"src":"/img/siteicon/128.png","sizes":"128x128","type":"image/png"},{"src":"/img/siteicon/144.png","sizes":"144x144","type":"image/png"},{"src":"/img/siteicon/512.png","sizes":"512x512","type":"image/png"}],"splash_pages":null}]]></content>
@@ -285,109 +279,6 @@ hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不
     <url>/about/index.html</url>
     <content><![CDATA[
 ]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/star-canvas.js</url>
-    <content><![CDATA[/**
- * 鼠标滑动生成星星特效
- */
-const startCanvas = () => {
-  window.addEventListener("load", () => {
-    var canvas = document.querySelector("#star-canvas");
-    var ctx = canvas.getContext("2d");
-    window.onresize = resizeCanvas;
-    // 设置画布大小
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-
-    // 设置画布样式
-    canvas.style.cssText = `
-      position: fixed;
-      z-index: 1000;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-    `;
-
-    var arr = [];
-    var colours = ["#ec4c8c", "#f47466", "#a4d8fa", "#ff9900", "#febcd5"];
-    // 鼠标移动事件
-    window.addEventListener("mousemove", (e) => {
-      arr.push({
-        x: e.clientX,
-        y: e.clientY,
-        r: Math.random() * 0.5 + 1.5,
-        td: Math.random() * 4 - 2,
-        dx: Math.random() * 2 - 1,
-        dy: Math.random() * 1 + 1,
-        rot: Math.random() * 90 + 90,
-        color: colours[Math.floor(Math.random() * colours.length)],
-      });
-    });
-
-    // 绘制星星
-    function star(x, y, r, l, rot) {
-      ctx.beginPath();
-      for (let i = 0; i < 5; i++) {
-        ctx.lineTo(
-          Math.cos(((18 + i * 72 - rot) * Math.PI) / 180) * r + x,
-          -Math.sin(((18 + i * 72 - rot) * Math.PI) / 180) * r + y
-        );
-        ctx.lineTo(
-          Math.cos(((54 + i * 72 - rot) * Math.PI) / 180) * l + x,
-          -Math.sin(((54 + i * 72 - rot) * Math.PI) / 180) * l + y
-        );
-      }
-      ctx.closePath();
-    }
-
-    // 绘制
-    function draw() {
-      for (let i = 0; i < arr.length; i++) {
-        let temp = arr[i];
-        star(temp.x, temp.y, temp.r, temp.r * 3, temp.rot);
-        ctx.fillStyle = temp.color;
-        ctx.strokeStyle = temp.color;
-        ctx.lineWidth = 0.1;
-        ctx.lineJoin = "round";
-        ctx.fill();
-        ctx.stroke();
-      }
-    }
-
-    // 更新
-    function update() {
-      for (let i = 0; i < arr.length; i++) {
-        arr[i].x += arr[i].dx;
-        arr[i].y += arr[i].dy;
-        arr[i].rot += arr[i].td;
-        arr[i].r -= 0.015;
-        if (arr[i].r < 0) {
-          arr.splice(i, 1);
-        }
-      }
-    }
-
-    // 定时器
-    setInterval(() => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      draw();
-      update();
-    }, 20);
-  });
-};
-// 启动
-startCanvas();]]></content>
   </entry>
   <entry>
     <title></title>
@@ -874,6 +765,12 @@ rgba(24,40,72,.2));
 }]]></content>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/js/runtime.js</url>
     <content><![CDATA[setInterval(() => {
@@ -924,6 +821,103 @@ rgba(24,40,72,.2));
     <url>/music/index.html</url>
     <content><![CDATA[
 ]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/star-canvas.js</url>
+    <content><![CDATA[/**
+ * 鼠标滑动生成星星特效
+ */
+const startCanvas = () => {
+  window.addEventListener("load", () => {
+    var canvas = document.querySelector("#star-canvas");
+    var ctx = canvas.getContext("2d");
+    window.onresize = resizeCanvas;
+    // 设置画布大小
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+
+    // 设置画布样式
+    canvas.style.cssText = `
+      position: fixed;
+      z-index: 1000;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+    `;
+
+    var arr = [];
+    var colours = ["#ec4c8c", "#f47466", "#a4d8fa", "#ff9900", "#febcd5"];
+    // 鼠标移动事件
+    window.addEventListener("mousemove", (e) => {
+      arr.push({
+        x: e.clientX,
+        y: e.clientY,
+        r: Math.random() * 0.5 + 1.5,
+        td: Math.random() * 4 - 2,
+        dx: Math.random() * 2 - 1,
+        dy: Math.random() * 1 + 1,
+        rot: Math.random() * 90 + 90,
+        color: colours[Math.floor(Math.random() * colours.length)],
+      });
+    });
+
+    // 绘制星星
+    function star(x, y, r, l, rot) {
+      ctx.beginPath();
+      for (let i = 0; i < 5; i++) {
+        ctx.lineTo(
+          Math.cos(((18 + i * 72 - rot) * Math.PI) / 180) * r + x,
+          -Math.sin(((18 + i * 72 - rot) * Math.PI) / 180) * r + y
+        );
+        ctx.lineTo(
+          Math.cos(((54 + i * 72 - rot) * Math.PI) / 180) * l + x,
+          -Math.sin(((54 + i * 72 - rot) * Math.PI) / 180) * l + y
+        );
+      }
+      ctx.closePath();
+    }
+
+    // 绘制
+    function draw() {
+      for (let i = 0; i < arr.length; i++) {
+        let temp = arr[i];
+        star(temp.x, temp.y, temp.r, temp.r * 3, temp.rot);
+        ctx.fillStyle = temp.color;
+        ctx.strokeStyle = temp.color;
+        ctx.lineWidth = 0.1;
+        ctx.lineJoin = "round";
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+
+    // 更新
+    function update() {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].x += arr[i].dx;
+        arr[i].y += arr[i].dy;
+        arr[i].rot += arr[i].td;
+        arr[i].r -= 0.015;
+        if (arr[i].r < 0) {
+          arr.splice(i, 1);
+        }
+      }
+    }
+
+    // 定时器
+    setInterval(() => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw();
+      update();
+    }, 20);
+  });
+};
+// 启动
+startCanvas();]]></content>
   </entry>
   <entry>
     <title>标签</title>
