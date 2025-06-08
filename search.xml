@@ -1,43 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>拾遗——局部染色</title>
-    <url>/posts/d04039c9/</url>
-    <content><![CDATA[谨以此文纪念我搭建起这个有模有样的网站，并开始写自己的第一篇markdown笔记，请多指教。
-Erdős的局部染色问题
-
-，但对，.
-
-想法是去证明在随机图中分别满足两个性质的概率都接近 .
-记熵函数，取满足，，并设置， 对的图存在的独立集，这种集合的个数期望为
-另一边取不可三染色的最小顶点集，则，进而，但.
-故对充分大的，在中随机取样中同时满足题述两个性质的图的概率趋于.
-]]></content>
-      <categories>
-        <category>组合</category>
-      </categories>
-      <tags>
-        <tag>概率方法</tag>
-        <tag>图论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>踩坑小记</title>
-    <url>/posts/b7b29213/</url>
-    <content><![CDATA[本来心血来潮想自己搭建一个网站发发数学笔记的Blog，于是按照B站教程用wordpress创建了自己的一个小站，但是缺点太多了，比如说由于我未成年，所以不能给域名备案，另一方面经常突然崩掉(当然这是因为我太菜了)，心态跟着网站也崩掉了~
-于是我开始转向现在的Hexo，终于一通捣鼓后发现：markdown语法和LaTex语法冲突太多了，我开始按照一些教程去装一些东西，试了好多种，最后误打误撞也是搞出来了(笑)，最后决定用
-hexo-filter-mathjax+
-hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不管了先这样吧。
-顺带一提，这个帖子也用于记录一些遇到的技术上的问题。毕竟有句古话说得好：
-
-坑是踩不完的。
-
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网络流</title>
     <url>/posts/89b04f08/</url>
     <content><![CDATA[碎碎念
@@ -106,12 +69,18 @@ FF算法及其衍生物
 对归纳，取,则存在使得且这足以推出所要结果（略去带余除法展开的计算细节）.
 
 应用到矩阵
-是一个  的  矩阵，每行  个  ，每列  个  ，,,则的矩阵若满足每行个1,每列个1,则可以通过的某些改为得到.
+定理4 是一个
+ 的  矩阵，每行  个  ，每列  个  ，，，则的矩阵若满足每行个1，每列个1，则可以通过的某些改为得到. 画个图
+定理5 给定实矩阵与实数，则存在整数矩阵使得的元素、行和、列和、全体元素和为相应值的舍入.(这里的 只是强调该定理可选参数)
+练习
+这是一个强大的工具,请用它解决以下问题:
+练习1 二部图满足中的点读为，中点的度为，则$|X||Y|存在X到Y$的完美匹配.
+练习2 非负整数方阵A满足每行、每列和均为,则可以表示为个置换矩阵的和.(置换矩阵是指每行每列恰有个,其余为的方阵).
+练习3
+有限图每点度为偶数则存在均衡定向(每点入度和出度均为偶数).
+练习4 二部图的每点度数则可以用色染边，使得在每点处同(异)色.
 ~~~
-上一个练习是一个强大的工具,请用它解决以下问题:
-\begin{exercise}二部图满足中的点读为,中点的度为,则$|X||Y|存在X到Y$的完美匹配.\ 非负整数方阵A满足每行、每列和均为,则可以表示为个置换矩阵的和.(置换矩阵是指每行每列恰有个,其余为的方阵).\
-有限图每点度为偶数则存在均衡定向(每点入度和出度均为偶数).\
-二部图的每点度数则可以用色染边,使得在每点处同(异)色.\
+还有一堆要做的，尽力而为吧：概率方法笔记，线性代数，Galois理论，代数数论初步，多项式，有空还要搬一点几何上来，虽然我已经好久没碰了…
 ]]></content>
       <categories>
         <category>组合</category>
@@ -121,6 +90,43 @@ FF算法及其衍生物
         <tag>矩阵</tag>
         <tag>网络流</tag>
         <tag>匹配</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>踩坑小记</title>
+    <url>/posts/b7b29213/</url>
+    <content><![CDATA[本来心血来潮想自己搭建一个网站发发数学笔记的Blog，于是按照B站教程用wordpress创建了自己的一个小站，但是缺点太多了，比如说由于我未成年，所以不能给域名备案，另一方面经常突然崩掉(当然这是因为我太菜了)，心态跟着网站也崩掉了~
+于是我开始转向现在的Hexo，终于一通捣鼓后发现：markdown语法和LaTex语法冲突太多了，我开始按照一些教程去装一些东西，试了好多种，最后误打误撞也是搞出来了(笑)，最后决定用
+hexo-filter-mathjax+
+hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不管了先这样吧。
+顺带一提，这个帖子也用于记录一些遇到的技术上的问题。毕竟有句古话说得好：
+
+坑是踩不完的。
+
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拾遗——局部染色</title>
+    <url>/posts/d04039c9/</url>
+    <content><![CDATA[谨以此文纪念我搭建起这个有模有样的网站，并开始写自己的第一篇markdown笔记，请多指教。
+Erdős的局部染色问题
+
+，但对，.
+
+想法是去证明在随机图中分别满足两个性质的概率都接近 .
+记熵函数，取满足，，并设置， 对的图存在的独立集，这种集合的个数期望为
+另一边取不可三染色的最小顶点集，则，进而，但.
+故对充分大的，在中随机取样中同时满足题述两个性质的图的概率趋于.
+]]></content>
+      <categories>
+        <category>组合</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>概率方法</tag>
       </tags>
   </entry>
   <entry>
@@ -226,70 +232,6 @@ FF算法及其衍生物
       </tags>
   </entry>
   <entry>
-    <title>正密度集合里的单位分数(3)</title>
-    <url>/posts/99e01d55/</url>
-    <content><![CDATA[书接上文，我们证明了命题2，但离命题1仍有一步之遥，这篇文章将引入一些引理，为最终证明作准备。
-
-
-
-记号
-含义
-
-
-
-
-
-
-
-
-
-
-
-
-
-引理3 ，则.
-引理3证明 ..
-注：第三个等号是因为左边至多项素数，而由素数定理前个数就包含了足够多的素数. 
-引理4 ，充分大，为有限整数集，，且成立，则.
-引理4证明 .其中，关于在时递减(若，则命题已证)，故上式，由此可以推出结论.
-
-引理5 存在常数满足：充分大，，，满足 ，若使得，则存在满足：
-(1);
-(2);
-(3).
-引理5证明 .断言：.这是因为从中移除所有且的素幂因子，至多移除了，验证剩余部分属于即可.于是：.
-其中的部分：  故当充分大时，，结合即证！
- 命题3 充分大，，满足，，，则下面两种情况至少一种发生：
-(1)，满足，;
-(2)对任意长不超过的区间，要么： - (a);要么 - (b)记，则. 若，则(2)必然发生.
-命题3证明 ，设，，由于，所以.
-，对使用引理5(其中取使得成立)，以此产生使得
-由定义，，但，所以不妨设全部，记，，对 使用引理4，.
-若，此时若存在，，则，矛盾！故此时可记所有，(2)b成立!
-回到一般情况，不妨设有不同的，由估计：，同上知此时恰有两个，记为.
-记，，注意.同理对也成立.
-若，由知，，且.
-故只需说明，否则，记，.由知，进而，，使得，但是，，，但，矛盾! 
-下面两个引理用作——修剪集合：
- 引理6 对充分大的与，且.
-引理6证明 定义递降子集列：，若，且，令，设操作停止时为，至多损失 .
- 引理7 充分大，，且，，满足，则，满足：，，.
-引理7证明 先证明若，且，则，.结合引理6可知，，且，；，，得证.由引理6，取，，，不断利用上面结果删去的元素即可.
-下面进入命题1的证明！
-命题1证明 ，，反复应用引理7生成：，，且.
-由被某个整除，知使含有倍数，取这样的最小下标，仍记为.
-若命题3的条件(2)对成立，则对，，命题2条件满足，生成，，成立！
-若否，命题3给出子集，，，设.反复用引理7生成：()，，.由的最小性，不存在整除的元素，故被整除，特别地，，包含的倍数，因为.故命题3的(2)必发生，对命题2使用，同上，生成，.
-终于，这件艺术品彻底完成.
-]]></content>
-      <categories>
-        <category>数论</category>
-      </categories>
-      <tags>
-        <tag>数论估计</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>正密度集合里的单位分数(2)</title>
     <url>/posts/80fb2c14/</url>
     <content><![CDATA[本文将会使用分析证明下面的命题2，它用于侦测是否使得存在子集满足.
@@ -362,131 +304,73 @@ FF算法及其衍生物
       </tags>
   </entry>
   <entry>
+    <title>正密度集合里的单位分数(3)</title>
+    <url>/posts/99e01d55/</url>
+    <content><![CDATA[书接上文，我们证明了命题2，但离命题1仍有一步之遥，这篇文章将引入一些引理，为最终证明作准备。
+
+
+
+记号
+含义
+
+
+
+
+
+
+
+
+
+
+
+
+
+引理3 ，则.
+引理3证明 ..
+注：第三个等号是因为左边至多项素数，而由素数定理前个数就包含了足够多的素数. 
+引理4 ，充分大，为有限整数集，，且成立，则.
+引理4证明 .其中，关于在时递减(若，则命题已证)，故上式，由此可以推出结论.
+
+引理5 存在常数满足：充分大，，，满足 ，若使得，则存在满足：
+(1);
+(2);
+(3).
+引理5证明 .断言：.这是因为从中移除所有且的素幂因子，至多移除了，验证剩余部分属于即可.于是：.
+其中的部分：  故当充分大时，，结合即证！
+ 命题3 充分大，，满足，，，则下面两种情况至少一种发生：
+(1)，满足，;
+(2)对任意长不超过的区间，要么： - (a);要么 - (b)记，则. 若，则(2)必然发生.
+命题3证明 ，设，，由于，所以.
+，对使用引理5(其中取使得成立)，以此产生使得
+由定义，，但，所以不妨设全部，记，，对 使用引理4，.
+若，此时若存在，，则，矛盾！故此时可记所有，(2)b成立!
+回到一般情况，不妨设有不同的，由估计：，同上知此时恰有两个，记为.
+记，，注意.同理对也成立.
+若，由知，，且.
+故只需说明，否则，记，.由知，进而，，使得，但是，，，但，矛盾! 
+下面两个引理用作——修剪集合：
+ 引理6 对充分大的与，且.
+引理6证明 定义递降子集列：，若，且，令，设操作停止时为，至多损失 .
+ 引理7 充分大，，且，，满足，则，满足：，，.
+引理7证明 先证明若，且，则，.结合引理6可知，，且，；，，得证.由引理6，取，，，不断利用上面结果删去的元素即可.
+下面进入命题1的证明！
+命题1证明 ，，反复应用引理7生成：，，且.
+由被某个整除，知使含有倍数，取这样的最小下标，仍记为.
+若命题3的条件(2)对成立，则对，，命题2条件满足，生成，，成立！
+若否，命题3给出子集，，，设.反复用引理7生成：()，，.由的最小性，不存在整除的元素，故被整除，特别地，，包含的倍数，因为.故命题3的(2)必发生，对命题2使用，同上，生成，.
+终于，这件艺术品彻底完成.
+]]></content>
+      <categories>
+        <category>数论</category>
+      </categories>
+      <tags>
+        <tag>数论估计</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/manifest.json</url>
     <content><![CDATA[{"name":"SilF`Blog","short_name":"SilF","theme_color":"#3b70fc","background_color":"#3b70fc","display":"standalone","scope":"/","start_url":"/","icons":[{"src":"/img/siteicon/16.png","sizes":"16x16","type":"image/png"},{"src":"/img/siteicon/32.png","sizes":"32x32","type":"image/png"},{"src":"/img/siteicon/48.png","sizes":"48x48","type":"image/png"},{"src":"/img/siteicon/64.png","sizes":"64x64","type":"image/png"},{"src":"/img/siteicon/128.png","sizes":"128x128","type":"image/png"},{"src":"/img/siteicon/144.png","sizes":"144x144","type":"image/png"},{"src":"/img/siteicon/512.png","sizes":"512x512","type":"image/png"}],"splash_pages":null}]]></content>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/css/myStyle.css</url>
-    <content><![CDATA[#web_bg {
-    background-image: url("../img/banner.jpg"),
-        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
-}
-#post_bg {
-    background-image: url("../img/banner.jpg"),
-        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
-}
-/* 侧边栏个人信息卡片动态渐变色 */
-#aside-content>.card-widget.card-info{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(8, 37, 95, 0.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.card-widget.card-info {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 侧边栏公告栏卡片渐变色 */
-#aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 侧边栏目录最新文章卡片渐变色 */
-#aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 个人信息Follow me按钮 */
-#aside-content>.card-widget.card-info>#card-info-btn {
-    background-color: #3eb8be;
-    border-radius: 8px;
-}
-/*文章页面*/
-.layout>#post {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#post {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/*主页文章预览页面*/
-#recent-posts>.recent-post-item{
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] #recent-posts>.recent-post-item{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-
-/*分类页面*/
-.layout>#page {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#page {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-
-/*时间轴页面*/
-.layout>#archive {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#archive {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[
-]]></content>
   </entry>
   <entry>
     <title></title>
@@ -863,6 +747,174 @@ div#category {
 }]]></content>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/css/myStyle.css</url>
+    <content><![CDATA[#web_bg {
+    background-image: url("../img/banner.jpg"),
+        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
+}
+#post_bg {
+    background-image: url("../img/banner.jpg"),
+        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
+}
+/* 侧边栏个人信息卡片动态渐变色 */
+#aside-content>.card-widget.card-info{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(8, 37, 95, 0.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.card-widget.card-info {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 侧边栏公告栏卡片渐变色 */
+#aside-content>.card-widget.card-announcement{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.card-widget.card-announcement{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 侧边栏目录最新文章卡片渐变色 */
+#aside-content>.sticky_layout>.card-widget{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.sticky_layout>.card-widget{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 个人信息Follow me按钮 */
+#aside-content>.card-widget.card-info>#card-info-btn {
+    background-color: #3eb8be;
+    border-radius: 8px;
+}
+/*文章页面*/
+.layout>#post {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#post {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/*主页文章预览页面*/
+#recent-posts>.recent-post-item{
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] #recent-posts>.recent-post-item{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+
+/*分类页面*/
+.layout>#page {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#page {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+
+/*时间轴页面*/
+.layout>#archive {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#archive {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}]]></content>
+  </entry>
+  <entry>
+    <title>link</title>
+    <url>/link/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/runtime.js</url>
+    <content><![CDATA[setInterval(() => {
+  let create_time = Math.round(new Date('2025-05-24 18:30:00').getTime() / 1000); //在此行修改建站时间
+  let timestamp = Math.round((new Date().getTime()) / 1000);
+  let second = timestamp - create_time;
+  let time = new Array(0, 0, 0, 0, 0);
+
+  var nol = function(h){
+    return h>9?h:'0'+h;
+  }
+  if (second >= 365 * 24 * 3600) {
+    time[0] = parseInt(second / (365 * 24 * 3600));
+    second %= 365 * 24 * 3600;
+  }
+  if (second >= 24 * 3600) {
+    time[1] = parseInt(second / (24 * 3600));
+    second %= 24 * 3600;
+  }
+  if (second >= 3600) {
+    time[2] = nol(parseInt(second / 3600));
+    second %= 3600;
+  }
+  if (second >= 60) {
+    time[3] = nol(parseInt(second / 60));
+    second %= 60;
+  }
+  if (second > 0) {
+    time[4] = nol(second);
+  }
+  if ((Number(time[2])7)){
+    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
+  }
+  else{
+    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
+  }
+  document.getElementById("workboard").innerHTML = currentTimeHtml;
+}, 1000);]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/js/star-canvas.js</url>
     <content><![CDATA[/**
@@ -958,52 +1010,6 @@ const startCanvas = () => {
 };
 // 启动
 startCanvas();]]></content>
-  </entry>
-  <entry>
-    <title>link</title>
-    <url>/link/index.html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/runtime.js</url>
-    <content><![CDATA[setInterval(() => {
-  let create_time = Math.round(new Date('2025-05-24 18:30:00').getTime() / 1000); //在此行修改建站时间
-  let timestamp = Math.round((new Date().getTime()) / 1000);
-  let second = timestamp - create_time;
-  let time = new Array(0, 0, 0, 0, 0);
-
-  var nol = function(h){
-    return h>9?h:'0'+h;
-  }
-  if (second >= 365 * 24 * 3600) {
-    time[0] = parseInt(second / (365 * 24 * 3600));
-    second %= 365 * 24 * 3600;
-  }
-  if (second >= 24 * 3600) {
-    time[1] = parseInt(second / (24 * 3600));
-    second %= 24 * 3600;
-  }
-  if (second >= 3600) {
-    time[2] = nol(parseInt(second / 3600));
-    second %= 3600;
-  }
-  if (second >= 60) {
-    time[3] = nol(parseInt(second / 60));
-    second %= 60;
-  }
-  if (second > 0) {
-    time[4] = nol(second);
-  }
-  if ((Number(time[2])7)){
-    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
-  }
-  else{
-    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
-  }
-  document.getElementById("workboard").innerHTML = currentTimeHtml;
-}, 1000);]]></content>
   </entry>
   <entry>
     <title>音乐馆</title>
