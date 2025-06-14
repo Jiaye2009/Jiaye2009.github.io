@@ -395,16 +395,263 @@ hexo-renderer-pandoc，当然以后想必也会遇到一堆隐藏的毛病，不
     <content><![CDATA[{"name":"SilF`Blog","short_name":"SilF","theme_color":"#3b70fc","background_color":"#3b70fc","display":"standalone","scope":"/","start_url":"/","icons":[{"src":"/img/siteicon/16.png","sizes":"16x16","type":"image/png"},{"src":"/img/siteicon/32.png","sizes":"32x32","type":"image/png"},{"src":"/img/siteicon/48.png","sizes":"48x48","type":"image/png"},{"src":"/img/siteicon/64.png","sizes":"64x64","type":"image/png"},{"src":"/img/siteicon/128.png","sizes":"128x128","type":"image/png"},{"src":"/img/siteicon/144.png","sizes":"144x144","type":"image/png"},{"src":"/img/siteicon/512.png","sizes":"512x512","type":"image/png"}],"splash_pages":null}]]></content>
   </entry>
   <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
     <title>分类</title>
     <url>/categories/index.html</url>
     <content><![CDATA[
 ]]></content>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[
-]]></content>
+    <title></title>
+    <url>/js/runtime.js</url>
+    <content><![CDATA[setInterval(() => {
+  let create_time = Math.round(new Date('2025-05-24 18:30:00').getTime() / 1000); //在此行修改建站时间
+  let timestamp = Math.round((new Date().getTime()) / 1000);
+  let second = timestamp - create_time;
+  let time = new Array(0, 0, 0, 0, 0);
+
+  var nol = function(h){
+    return h>9?h:'0'+h;
+  }
+  if (second >= 365 * 24 * 3600) {
+    time[0] = parseInt(second / (365 * 24 * 3600));
+    second %= 365 * 24 * 3600;
+  }
+  if (second >= 24 * 3600) {
+    time[1] = parseInt(second / (24 * 3600));
+    second %= 24 * 3600;
+  }
+  if (second >= 3600) {
+    time[2] = nol(parseInt(second / 3600));
+    second %= 3600;
+  }
+  if (second >= 60) {
+    time[3] = nol(parseInt(second / 60));
+    second %= 60;
+  }
+  if (second > 0) {
+    time[4] = nol(second);
+  }
+  if ((Number(time[2])7)){
+    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
+  }
+  else{
+    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
+  }
+  document.getElementById("workboard").innerHTML = currentTimeHtml;
+}, 1000);]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/star-canvas.js</url>
+    <content><![CDATA[/**
+ * 鼠标滑动生成星星特效
+ */
+const startCanvas = () => {
+  window.addEventListener("load", () => {
+    var canvas = document.querySelector("#star-canvas");
+    var ctx = canvas.getContext("2d");
+    window.onresize = resizeCanvas;
+    // 设置画布大小
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+
+    // 设置画布样式
+    canvas.style.cssText = `
+      position: fixed;
+      z-index: 1000;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+    `;
+
+    var arr = [];
+    var colours = ["#ec4c8c", "#f47466", "#a4d8fa", "#ff9900", "#febcd5"];
+    // 鼠标移动事件
+    window.addEventListener("mousemove", (e) => {
+      arr.push({
+        x: e.clientX,
+        y: e.clientY,
+        r: Math.random() * 0.5 + 1.5,
+        td: Math.random() * 4 - 2,
+        dx: Math.random() * 2 - 1,
+        dy: Math.random() * 1 + 1,
+        rot: Math.random() * 90 + 90,
+        color: colours[Math.floor(Math.random() * colours.length)],
+      });
+    });
+
+    // 绘制星星
+    function star(x, y, r, l, rot) {
+      ctx.beginPath();
+      for (let i = 0; i < 5; i++) {
+        ctx.lineTo(
+          Math.cos(((18 + i * 72 - rot) * Math.PI) / 180) * r + x,
+          -Math.sin(((18 + i * 72 - rot) * Math.PI) / 180) * r + y
+        );
+        ctx.lineTo(
+          Math.cos(((54 + i * 72 - rot) * Math.PI) / 180) * l + x,
+          -Math.sin(((54 + i * 72 - rot) * Math.PI) / 180) * l + y
+        );
+      }
+      ctx.closePath();
+    }
+
+    // 绘制
+    function draw() {
+      for (let i = 0; i < arr.length; i++) {
+        let temp = arr[i];
+        star(temp.x, temp.y, temp.r, temp.r * 3, temp.rot);
+        ctx.fillStyle = temp.color;
+        ctx.strokeStyle = temp.color;
+        ctx.lineWidth = 0.1;
+        ctx.lineJoin = "round";
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+
+    // 更新
+    function update() {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].x += arr[i].dx;
+        arr[i].y += arr[i].dy;
+        arr[i].rot += arr[i].td;
+        arr[i].r -= 0.015;
+        if (arr[i].r < 0) {
+          arr.splice(i, 1);
+        }
+      }
+    }
+
+    // 定时器
+    setInterval(() => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw();
+      update();
+    }, 20);
+  });
+};
+// 启动
+startCanvas();]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/css/myStyle.css</url>
+    <content><![CDATA[#web_bg {
+    background-image: url("../img/banner.jpg"),
+        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
+}
+#post_bg {
+    background-image: url("../img/banner.jpg"),
+        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
+}
+/* 侧边栏个人信息卡片动态渐变色 */
+#aside-content>.card-widget.card-info{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(8, 37, 95, 0.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.card-widget.card-info {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 侧边栏公告栏卡片渐变色 */
+#aside-content>.card-widget.card-announcement{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.card-widget.card-announcement{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 侧边栏目录最新文章卡片渐变色 */
+#aside-content>.sticky_layout>.card-widget{
+    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.6));
+}
+[data-theme=dark] #aside-content>.sticky_layout>.card-widget{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/* 个人信息Follow me按钮 */
+#aside-content>.card-widget.card-info>#card-info-btn {
+    background-color: #3eb8be;
+    border-radius: 8px;
+}
+/*文章页面*/
+.layout>#post {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#post {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+/*主页文章预览页面*/
+#recent-posts>.recent-post-item{
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] #recent-posts>.recent-post-item{
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+
+/*分类页面*/
+.layout>#page {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#page {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}
+
+/*时间轴页面*/
+.layout>#archive {
+    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.9), 
+rgba(225,235,255,.8));
+}
+[data-theme=dark] .layout>#archive {
+    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
+rgba(35,37,58,.9), 
+rgba(35,37,58,.9), 
+rgba(24,40,72,.2));
+}]]></content>
   </entry>
   <entry>
     <title></title>
@@ -779,253 +1026,6 @@ div#category {
 #article-container figure.highlight {
   border-radius: 10px;
 }]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/css/myStyle.css</url>
-    <content><![CDATA[#web_bg {
-    background-image: url("../img/banner.jpg"),
-        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
-}
-#post_bg {
-    background-image: url("../img/banner.jpg"),
-        linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35))
-}
-/* 侧边栏个人信息卡片动态渐变色 */
-#aside-content>.card-widget.card-info{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(8, 37, 95, 0.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.card-widget.card-info {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 侧边栏公告栏卡片渐变色 */
-#aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 侧边栏目录最新文章卡片渐变色 */
-#aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(225,235,255,.6), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.6));
-}
-[data-theme=dark] #aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/* 个人信息Follow me按钮 */
-#aside-content>.card-widget.card-info>#card-info-btn {
-    background-color: #3eb8be;
-    border-radius: 8px;
-}
-/*文章页面*/
-.layout>#post {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#post {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-/*主页文章预览页面*/
-#recent-posts>.recent-post-item{
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] #recent-posts>.recent-post-item{
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-
-/*分类页面*/
-.layout>#page {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#page {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}
-
-/*时间轴页面*/
-.layout>#archive {
-    background: linear-gradient(-45deg, rgba(225,235,255,.8), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.9), 
-rgba(225,235,255,.8));
-}
-[data-theme=dark] .layout>#archive {
-    background: linear-gradient(-45deg, rgba(24,40,72,.2), 
-rgba(35,37,58,.9), 
-rgba(35,37,58,.9), 
-rgba(24,40,72,.2));
-}]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/star-canvas.js</url>
-    <content><![CDATA[/**
- * 鼠标滑动生成星星特效
- */
-const startCanvas = () => {
-  window.addEventListener("load", () => {
-    var canvas = document.querySelector("#star-canvas");
-    var ctx = canvas.getContext("2d");
-    window.onresize = resizeCanvas;
-    // 设置画布大小
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-
-    // 设置画布样式
-    canvas.style.cssText = `
-      position: fixed;
-      z-index: 1000;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-    `;
-
-    var arr = [];
-    var colours = ["#ec4c8c", "#f47466", "#a4d8fa", "#ff9900", "#febcd5"];
-    // 鼠标移动事件
-    window.addEventListener("mousemove", (e) => {
-      arr.push({
-        x: e.clientX,
-        y: e.clientY,
-        r: Math.random() * 0.5 + 1.5,
-        td: Math.random() * 4 - 2,
-        dx: Math.random() * 2 - 1,
-        dy: Math.random() * 1 + 1,
-        rot: Math.random() * 90 + 90,
-        color: colours[Math.floor(Math.random() * colours.length)],
-      });
-    });
-
-    // 绘制星星
-    function star(x, y, r, l, rot) {
-      ctx.beginPath();
-      for (let i = 0; i < 5; i++) {
-        ctx.lineTo(
-          Math.cos(((18 + i * 72 - rot) * Math.PI) / 180) * r + x,
-          -Math.sin(((18 + i * 72 - rot) * Math.PI) / 180) * r + y
-        );
-        ctx.lineTo(
-          Math.cos(((54 + i * 72 - rot) * Math.PI) / 180) * l + x,
-          -Math.sin(((54 + i * 72 - rot) * Math.PI) / 180) * l + y
-        );
-      }
-      ctx.closePath();
-    }
-
-    // 绘制
-    function draw() {
-      for (let i = 0; i < arr.length; i++) {
-        let temp = arr[i];
-        star(temp.x, temp.y, temp.r, temp.r * 3, temp.rot);
-        ctx.fillStyle = temp.color;
-        ctx.strokeStyle = temp.color;
-        ctx.lineWidth = 0.1;
-        ctx.lineJoin = "round";
-        ctx.fill();
-        ctx.stroke();
-      }
-    }
-
-    // 更新
-    function update() {
-      for (let i = 0; i < arr.length; i++) {
-        arr[i].x += arr[i].dx;
-        arr[i].y += arr[i].dy;
-        arr[i].rot += arr[i].td;
-        arr[i].r -= 0.015;
-        if (arr[i].r < 0) {
-          arr.splice(i, 1);
-        }
-      }
-    }
-
-    // 定时器
-    setInterval(() => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      draw();
-      update();
-    }, 20);
-  });
-};
-// 启动
-startCanvas();]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/runtime.js</url>
-    <content><![CDATA[setInterval(() => {
-  let create_time = Math.round(new Date('2025-05-24 18:30:00').getTime() / 1000); //在此行修改建站时间
-  let timestamp = Math.round((new Date().getTime()) / 1000);
-  let second = timestamp - create_time;
-  let time = new Array(0, 0, 0, 0, 0);
-
-  var nol = function(h){
-    return h>9?h:'0'+h;
-  }
-  if (second >= 365 * 24 * 3600) {
-    time[0] = parseInt(second / (365 * 24 * 3600));
-    second %= 365 * 24 * 3600;
-  }
-  if (second >= 24 * 3600) {
-    time[1] = parseInt(second / (24 * 3600));
-    second %= 24 * 3600;
-  }
-  if (second >= 3600) {
-    time[2] = nol(parseInt(second / 3600));
-    second %= 3600;
-  }
-  if (second >= 60) {
-    time[3] = nol(parseInt(second / 60));
-    second %= 60;
-  }
-  if (second > 0) {
-    time[4] = nol(second);
-  }
-  if ((Number(time[2])7)){
-    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
-  }
-  else{
-    currentTimeHtml ="" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '';
-  }
-  document.getElementById("workboard").innerHTML = currentTimeHtml;
-}, 1000);]]></content>
   </entry>
   <entry>
     <title>link</title>
